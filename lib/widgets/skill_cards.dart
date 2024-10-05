@@ -1,5 +1,9 @@
+import 'dart:io' show Platform;
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/widgets/web_view.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SkillCards extends StatelessWidget {
   final String domainName, description;
@@ -61,17 +65,29 @@ class SkillCards extends StatelessWidget {
                   domainName != 'Rust'
                       ? TextButton(
                           child: const Text('EXPLORE'),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
+                          onPressed: () async {
+                            if (Platform.isWindows) {
+                              // For Windows, launch in the default browser
+                              if (await canLaunchUrl(Uri.parse(url))) {
+                                await launchUrl(Uri.parse(url));
+                              } else {
+                                if (kDebugMode) {
+                                  print('Could not launch $url');
+                                }
+                              }
+                            } else {
+                              // For other platforms, open the WebView
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
                                   builder: (context) => WebViewApp(
-                                        url: url,
-                                        domain: domainName,
-                                      )),
-                            );
-                          },
-                        )
+                                    url: url,
+                                    domain: domainName,
+                                  ),
+                                ),
+                              );
+                            }
+                          })
                       : TextButton(
                           child: const Text('Releasing Soon'),
                           onPressed: () {

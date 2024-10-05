@@ -3,17 +3,19 @@ import 'package:portfolio/widgets/image_wid.dart';
 import 'package:portfolio/widgets/my_skills.dart';
 import 'package:portfolio/widgets/text_profile.dart';
 import 'package:portfolio/widgets/academic.dart';
-import 'dart:math';
+import 'package:portfolio/widgets/contact.dart';
+import 'package:portfolio/layouts/mobile_body.dart';
+import 'package:portfolio/layouts/desktop_body.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    const double heading = 40;
-    var screenSize = MediaQuery.sizeOf(context);
-    var screenWidth = screenSize.width;
-    double headSize = min(screenWidth, heading);
+    const double headSize = 32;
+    //var screenSize = MediaQuery.sizeOf(context);
+    //var screenWidth = screenSize.width;
+    //double headSize = min(screenWidth * 0.08, heading);
 
     return MaterialApp(
       title: "Portfolio App",
@@ -66,7 +68,7 @@ class HomePage extends StatelessWidget {
                       'Skillset',
                       //textAlign: TextAlign.center,
                       style: TextStyle(
-                          fontSize: 32,
+                          fontSize: headSize,
                           color: Color(0xffB17457),
                           fontFamily: 'Preospe'),
                     ),
@@ -90,7 +92,7 @@ class HomePage extends StatelessWidget {
                       'Academics',
                       //textAlign: TextAlign.center,
                       style: TextStyle(
-                          fontSize: 32,
+                          fontSize: headSize,
                           color: Color(0xffB17457),
                           fontFamily: 'Preospe'),
                     ),
@@ -103,8 +105,31 @@ class HomePage extends StatelessWidget {
                 Center(child: Academic(index: 1)),
                 Center(child: Academic(index: 2)),
                 SizedBox(
-                  height: 24,
-                )
+                  height: 40,
+                ),
+                Center(
+                  child: Container(
+                    width: 300,
+                    height: 50,
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Color(0xffD8D2C2), width: 3),
+                    ),
+                    alignment: AlignmentDirectional.center,
+                    child: Text(
+                      'Contact',
+                      //textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: headSize,
+                          color: Color(0xffB17457),
+                          fontFamily: 'Preospe'),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 28,
+                ),
+                Center(child: Contact(mobileBody: MobileBody(), desktopBody: DesktopBody(),),),
               ],
             ),
           ],

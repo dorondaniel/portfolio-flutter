@@ -30,7 +30,7 @@ class _AcademicState extends State<Academic> {
 
     const double maxCircleSize = 32.0;
     const double maxLineHeight = 40.0;
-    const double maxFontSizeLarge = 20.0;
+    const double maxFontSizeLarge = 18.0;
     const double maxFontSizeSmall = 16.0;
     const double maxMargin = 60.0;
     const double maxH = 148.0;
@@ -41,7 +41,7 @@ class _AcademicState extends State<Academic> {
         min(screenWidth * 0.08, maxCircleSize); // Dynamic size for the circle
     double lineHeight =
         min(screenWidth * 0.15, maxLineHeight); // Dynamic height for the line
-    double fontSizeLarge = min(screenWidth * 0.06,
+    double fontSizeLarge = min(screenWidth * 0.05,
         maxFontSizeLarge); // Dynamic font size for large text
     double fontSizeSmall = min(screenWidth * 0.05,
         maxFontSizeSmall); // Dynamic font size for smaller text

@@ -18,7 +18,7 @@ class MySkills extends StatelessWidget {
           child: ScrollLoopAutoScroll(
             reverseScroll: true,
             scrollDirection: Axis.horizontal,
-            duration: Duration(seconds: 300),
+            duration: Duration(seconds: 400),
             delay: Duration(seconds: 2),
             delayAfterScrollInput: Duration(seconds: 4),
             child: Wrap(
