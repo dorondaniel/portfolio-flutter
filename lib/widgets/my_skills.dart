@@ -44,17 +44,11 @@ class MySkills extends StatelessWidget {
                     description:
                         'For the past year, personal Android app development projects, as well as academic projects, have been a focus of my work.'),
                 SkillCards(
-                    icon: 'assets/rust.png',
-                    domainName: 'Rust',
-                    url: 'https://github.com/dorondaniel/WatchVault',
+                    icon: 'assets/3ds_logo.png',
+                    domainName: '3DS Enovia',
+                    url: '#',
                     description:
-                        'Able to work with Rust, a systems programming language known for its performance and safety features. Open to writing efficient code while ensuring memory safety in projects.'),
-                SkillCards(
-                    icon: 'assets/react.png',
-                    domainName: 'React',
-                    url: 'https://github.com/dorondaniel/Portfolio',
-                    description:
-                        'Familiar with React, a popular JavaScript library for building dynamic user interfaces. Eager to work with component-based architecture and state management to develop interactive web applications.'),
+                        'Worked on Dassault Systèmes 3DEXPERIENCE (ENOVIA) platform for Specification, Recipe, and MPP Management, handling structured data pipelines between PLM and Enterprise Data Lake.')
               ],
             ),
           ),

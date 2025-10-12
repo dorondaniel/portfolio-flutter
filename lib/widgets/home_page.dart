@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/widgets/experience.dart';
 import 'package:portfolio/widgets/image_wid.dart';
 import 'package:portfolio/widgets/my_skills.dart';
 import 'package:portfolio/widgets/text_profile.dart';
@@ -77,6 +78,33 @@ class HomePage extends StatelessWidget {
                 SizedBox(height: 24),
                 Center(
                   child: MySkills(),
+                ),
+                Center(child: SizedBox(height: 32,),),
+                Center(
+                  child: Container(
+                    width: 300,
+                    height: 50,
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Color(0xffD8D2C2), width: 3),
+                    ),
+                    alignment: AlignmentDirectional.center,
+                    child: Text(
+                      'Experience',
+                      //textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: headSize,
+                          color: Color(0xffB17457),
+                          fontFamily: 'Preospe'),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 32,
+                ),
+                Center(child: Experience(index: 0)),
+                SizedBox(
+                  height: 40,
                 ),
                 Center(child: SizedBox(height: 32,),),
                 Center(
